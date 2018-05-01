@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test Gits</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- BOOTSTRAP CSS -->
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<!-- FONT AWESOME -->
+	<link rel="stylesheet" type="text/css" href="font-awesome/css/font-awesome.min.css">
+	<!-- CUSTOM CSS -->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+	<div class="profile" id="app">
+		<div class="col-md-2" style="margin:0 !important; padding:0 !important">
+			<div class="profile-sidebar">
+				<!-- SIDEBAR USERPIC -->
+				<div class="profile-userpic">
+					<img src="images/user.jpg" class="img-responsive" alt="">
+					<!-- END SIDEBAR USERPIC -->
+					<!-- SIDEBAR USER TITLE -->
+					<div class="profile-usertitle">
+						<div class="profile-usertitle-name">
+							Marcus Doe
+						</div>
+						<div class="profile-usertitle-job">
+							<div class="dropdown">
+								<a class="dropdown-toggle" style="cursor: pointer;color: #fff;" id="dropdownMenu1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+									Art Directior
+									<span class="caret"></span>
+								</a>
+								<ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
+									<li><a href="#">Action</a></li>
+									<li><a href="#">Another action</a></li>
+									<li><a href="#">Something else here</a></li>
+									<li role="separator" class="divider"></li>
+									<li><a href="#">Separated link</a></li>
+								</ul>
+							</div>					
+						</div>
+					</div>
+				</div>
+				<!-- END SIDEBAR USER TITLE -->
+				<!-- SIDEBAR MENU -->
+				<div class="profile-usermenu">
+					<ul class="nav">
+						<li class="active">
+							<a href="#">
+								<i class="glyphicon glyphicon-home"></i>
+								Dashboard
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-bar-chart" aria-hidden="true"></i>
+								Graphic
+							</a>
+						</li>
+						<li>
+							<a href="#" target="_blank">
+								<i class="glyphicon glyphicon-th-list"></i>
+								Form 
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<i class="fa fa-table" aria-hidden="true"></i>
+								Table
+							</a>
+						</li>
+					</ul>
+				</div>
+				<!-- END MENU -->
+			</div>
+		</div>
+		<div class="col-md-10" style="margin:0 !important; padding:0 !important">
+			<nav class="navbar navbar-default z-depth-1" role="navigation" style="margin: 0;border-radius: 0;border: 0;">
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav navbar-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-envelope icon-notif" aria-hidden="true"></i>
+							</a>
+							<ul class="list-notificacao dropdown-menu">
+								<li id='item_notification_1'>
+									<div class="media">
+										<div class="media-body">
+											<h4 class="media-heading"><b>Subject</b></h4>
+											<p>This is message...</p>
+										</div>
+									</div>
+								</li>
+								<li id='item_notification_2'>
+									<div class="media">
+										<div class="media-body">
+											<h4 class="media-heading"><b>Subject</b></h4>
+											<p>This is message...</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+								<i class="fa fa-bell icon-notif"></i>
+								<span class='badgeAlert'>1</span>
+							</a>
+							<ul class="list-notificacao dropdown-menu">
+								<li id='item_notification_1'>
+									<div class="media">
+										<div class="media-left"> 
+											<a href="#"> 
+												<img alt="64x64" class="media-object" src="images/sample.png" data-holder-rendered="true">
+											</a> 
+										</div>
+										<div class="media-body">
+											<h4 class="media-heading"><b>Notification</b></h4>
+											<p>Someone liked your post</p>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</li>
+						<li class="logout">
+							<a href="#"><i class="fa fa-sign-out icon-notif" aria-hidden="true"></i>
+								Logout
+							</a>
+						</li>
+					</ul>
+				</div>
+			</nav>
+			<div class="profile-content">
+				<div class="col-md-12">
+					<!-- LIST USER STARTS HERE -->
+					<div class="panel z-depth-1 panel-default credit-card-box">
+						<div class="panel-heading display-table" >
+							<div class="row display-tr" >
+								<h3 class="panel-title" >List User</h3>
+							</div>
+
+							<!-- line modal -->
+							<div class="modal fade" id="squarespaceModal" tabindex="-1" role="dialog" aria-labelledby="modalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button>
+											<h3 class="modal-title" id="lineModalLabel">Input data</h3>
+										</div>
+										<div class="modal-body">
+											<form v-on:submit.prevent="addData">
+												<div class="form-group">
+													<label for="username">Username</label>
+													<input type="text" id="username" class="form-control" v-model="username">
+												</div>
+												<div class="form-group">
+													<label for="name">Name</label>
+													<input type="text" id="name" class="form-control" v-model="name">
+												</div>
+												<div class="form-group">
+													<label for="telephone">Telephone</label>
+													<input type="number" id="telephone" class="form-control" v-model="telephone">
+												</div>
+												<div class="form-group">
+													<label for="role">Role</label>
+													<input type="text" id="role" class="form-control" v-model="role">
+												</div>
+												<button class="btn btn-info">Submit</button>
+												<button class="btn btn-info" type="button" data-dismiss="modal">Cancel</button>
+											</form>
+
+										</div>
+									</div>
+								</div>
+							</div> 
+
+							<div class="btn-create text-right">
+								<button type="button" data-toggle="modal" data-target="#squarespaceModal" class="btn btn-info btn-circle btn-lg"><i class="fa fa-plus" aria-hidden="true"></i></button>
+							</div>
+						</div>
+						<div class="panel-body">
+							
+
+							<div class="col-md-3"><br>
+								<div class="input-group cari">
+									<span class="input-group-btn">
+										<button class="btn btn-default" type="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+									</span>
+									<input type="text" class="form-control" v-model="search" placeholder="Search for...">
+								</div><br>
+							</div>
+
+
+							<div class="col-md-12">
+								<table class="table table-hover table-responsive">
+									<thead>
+										<tr>
+											<th>Username</th>
+											<th>Name</th>
+											<th>Telephone</th>
+											<th>Role
+												<i class="fa fa-angle-up sorting" aria-hidden="true"  v-on:click="sortLowest"></i>
+												<i class="fa fa-angle-down sorting" aria-hidden="true" v-on:click="sortHighest"></i>
+											</th>
+											<th colspan="2" class="text-center">Action</th>
+										</tr>
+									</thead>
+									<tbody>
+										<tr v-for="data in filteredListUser" :class="{editing: data == editedUser}" v-cloak>
+											<td>
+												<div class="view">
+													{{data.username}}
+												</div>
+												<div class="edit">
+													<input class="form-control" type="text" v-model="data.username"/>
+												</div>
+											</td>
+											<td>
+												<div class="view">
+													{{data.name}}
+												</div>
+												<div class="edit">
+													<input class="form-control" type="text" v-model="data.name"/>
+												</div>
+											</td>
+											<td>
+												<div class="view">
+													{{data.telephone}}
+												</div>
+												<div class="edit">
+													<input class="form-control" type="number" v-model="data.telephone"/>
+												</div>
+											</td>
+											<td>
+												<div class="view">
+													{{data.role}}
+												</div>
+												<div class="edit">
+													<input class="form-control" type="text" v-model="data.role"/>
+												</div>
+											</td>
+											<td class="text-center tombol-edit" @click="editData(data)">EDIT</td>
+											<td class="text-center tombol-delete" @click="deleteEvent(data)">DELETE</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
+
+							<div class="col-md-12 paging">
+								<div class="row">
+									<div class="col-md-8 text-right">
+										Rows per page :
+									</div>
+									<div class="col-md-2">
+										<select class="form-control">
+											<option>5</option>
+											<option>10</option>
+											<option>20</option>
+										</select>
+									</div>
+									<div class="col-md-2">
+										<span class="halaman">1-5 of 1-10</span>
+										<i class="fa fa-angle-left" aria-hidden="true"></i>
+										<i class="fa fa-angle-right" aria-hidden="true"></i>
+									</div>
+								</div>
+							</div>
+						</div>            
+						<!-- LIST USER FORM ENDS HERE -->
+					</div>
+				</div>
+			</div>
+		</div>
+	</body>
+
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/vue.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.js"></script>
+
+	<script>
+		new Vue({
+			el: '#app',
+			data: {
+				editMode: false,
+				editedUser: null,
+				username: "",
+				name: "",
+				telephone: "",
+				role: "",
+				search: "",
+				listUser: [
+				{
+					username: "novaloktavio",
+					name: "noval oktavio",
+					telephone: 082763763,
+					role: "admin"
+				},
+				{
+					username: "admin123",
+					name: "noval",
+					telephone: 34763792,
+					role: "user"
+				}
+				]
+			},
+
+			methods:{
+				addData: function(){
+					this.listUser.push({
+						username: this.username,
+						name: this.name,
+						telephone: this.telephone,
+						role: this.role,
+					});
+				},
+				sortLowest() {
+					this.listUser.sort((a, b) => a.role > b.role ? 1 : -1);
+				},
+				sortHighest() {
+					this.listUser.sort((a, b) => a.role < b.role ? 1 : -1);
+				},
+
+				editData (data) {
+					this.beforEditCache = data
+					this.editedUser = data
+				},
+				deleteEvent: function(data) {
+					this.listUser.splice(data, 1);
+				}
+			},
+
+			computed:{
+				filteredListUser: function(){
+					return this.listUser.filter((data) => {
+						return data.username.match(this.search);
+					});
+				}
+			}
+		});
+	</script>
+
+	</html>
