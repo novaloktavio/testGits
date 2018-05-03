@@ -4,8 +4,8 @@ Test GITS Vue JS. Menampilkan suatu data, bisa create, edit, dan delete.
 # Installation
 ```
 1. Download File
-2. Extract File tersebut
-3. Buka index.html
+2. Extract File
+3. Open index.html
 ```
 
 # Built With
